@@ -1,3 +1,15 @@
 div img {
     width: 20%;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body{font-family: 'Montserrat',sans-serif;}
+
+body *{
+    /* display:inline-block;
+    justify-self: center; */
+    margin: auto;
+    text-align: center;
+    width: 80%;
+}
+
