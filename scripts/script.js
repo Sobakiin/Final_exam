@@ -34,15 +34,33 @@ function galeryImg(event){
 
 function getEffect(event){
     let efName=effect.value
-    if(efName==="blur"||efName === "Blur"){
+    if(efName==="blur"||efName === "obscure"){
         let path = document.querySelector(".displayed-img")
         let pic = path.src.substring(path.src.length-5,path.src.length-4) // The src of the image is the whole path name,
                                                         //   but I only need part of the image name. 
                                                         // This substring takes out the one I need
-        path.src=`images/pic${pic}B.jpg`        
+        if(pic==="B"){
+            pic = path.src.substring(path.src.length-6,path.src.length-5)
+        }
+        // This If statement is my failsafe if the picture is already blurry
+        path.src=`images/pic${pic}B.jpg`
+        
+    }
+    else if(efName==="clear"||efName==="unblur"){
+        let path = document.querySelector(".displayed-img")
+        let pic = path.src.substring(path.src.length-6,path.src.length-5) 
+        // The src of the image is the whole path name,
+        // but I only need part of the image name. 
+        // This substring takes out the one I need
+       let check ='12345'
+        if(check.includes(pic)===false){
+            pic = path.src.substring(path.src.length-5,path.src.length-4)
+        }
+        // This If statement is my failsafe if the picture is already clear
+        path.src=`images/pic${pic}.jpg`     
     }
     else{
-        alert("Invalid entry. \nValid Entrie(s): blur")
+        alert("Invalid entry. \nValid Entrie(s): blur \nobscure \nclear \nunblur")
     }
     effect.value =""
 }
