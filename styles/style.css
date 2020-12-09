@@ -5,11 +5,38 @@ div img {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 body{font-family: 'Montserrat',sans-serif;}
 
-body *{
+body > *{
     /* display:inline-block;
     justify-self: center; */
     margin: auto;
     text-align: center;
-    width: 80%;
 }
 
+
+header{
+    width: 80%;
+}
+section{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+}
+section button{
+    width:4rem
+}
+#effect{
+    width:25%
+}
+#thumb-bar{
+    width: 80%
+}
+
+@media screen and (min-width:640px){
+    
+    section{
+        display: flex;
+        width: 640px;
+        flex-direction: row;
+    }
+}
